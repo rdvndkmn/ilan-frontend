@@ -1,6 +1,6 @@
 import {useState} from "react";
 
-function Login() {
+function Login({onLogin}) {
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
 
@@ -22,6 +22,7 @@ function Login() {
                 throw new Error("hatalı veri girildi.");
             }
             console.log("giriş başarılı");
+            onLogin(credentials);
             setEmail("");
             setPassword("");
 
@@ -38,7 +39,9 @@ function Login() {
             <input value={email} onChange={event => setEmail(event.target.value)} type={"email"}/>
             <input value={password} onChange={event => setPassword(event.target.value)} type={"password"}/>
             <button>Giriş yap</button>
+
         </form>
+
     );
 }
 
