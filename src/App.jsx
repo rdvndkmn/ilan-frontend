@@ -8,6 +8,7 @@ import AdCreate from "./pages/AdCreate.jsx";
 import AdList from "./pages/AdList.jsx";
 import AdDetail from "./pages/AdDetail.jsx";
 import AdminPanel from "./pages/AdminPanel.jsx";
+import AdUpdate from "./pages/AdUpdate.jsx";
 
 function App() {
 
@@ -73,6 +74,12 @@ function App() {
               />
           )}
 
+          {selectedAdId !== null && (
+              <AdUpdate
+                  adId={selectedAdId}
+                  credentials={credentials}
+              />
+          )}
       <button onClick={handleClick}>Bana {count} defa tıklandı </button>
 
           <input value={name} onChange={event => setName(event
